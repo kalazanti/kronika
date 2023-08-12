@@ -7,9 +7,8 @@
 <script setup>
 import ArticleBox from "../components/ArticleBox.vue";
 import { useArticlesStore } from "@/stores/articles.js";
-import { ref, defineExpose } from "vue";
+import { defineExpose } from "vue";
 import { storeToRefs } from "pinia";
-// const articles = ref([])
 const articlesStore = useArticlesStore();
 
 const { list: articles } = storeToRefs(articlesStore);
