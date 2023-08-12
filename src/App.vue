@@ -1,11 +1,18 @@
 <template>
   <header>
-  <h1>This is the main App component</h1>
-      <button @click="pushToArticles">Add dummy article</button>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <h1>This is the main App component</h1>
+    <button @click="pushToArticles">Add dummy article</button>
+      <nav class="three columns" style="align-items: baseline">
+        <RouterLink to="/" class="primary card">
+          <strong>Krónika</strong>
+        </RouterLink>
+        <RouterLink to="/rovatok" class="primary card">
+          <strong>Rovatok</strong>
+        </RouterLink>
+        <a href="https://kalazanti.github.com" class="accent card">
+          <strong>Aktuális</strong>
+        </a>
+    </nav>
   </header>
 
   <RouterView />
@@ -22,13 +29,13 @@ const pb = new PocketBase('https://kalazanti.fly.dev');
 const articles = useArticlesStore();
 
 pb.collection('kronika').getFullList({
-    sort: '-created',
-    filter: "published = true",
+  sort: '-created',
+  filter: "published = true",
 }).then(records => articles.list = records)
 
-function pushToArticles(e){
+function pushToArticles(e) {
   console.log(e)
   console.log("poop")
-  articles.list.push({title: 'kaki'})
+  articles.list.push({ title: 'kaki' })
 }
 </script>
