@@ -23,6 +23,7 @@ const articles = useArticlesStore();
 
 pb.collection('kronika').getFullList({
     sort: '-created',
+    filter: "published = true",
 }).then(records => articles.list = records)
 
 function pushToArticles(e){
