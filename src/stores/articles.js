@@ -7,7 +7,7 @@ export const useArticlesStore = defineStore('articles', () => {
     list.find(article => article.id === id)
   }
 
-  return { count, list, getById }
+  return { list, getById }
 })
 
 
