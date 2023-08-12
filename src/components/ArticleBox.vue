@@ -1,5 +1,5 @@
 <template>
-    <article>
+    <article class="lightgray card">
         <a href="cikkek/#!/${link}">
             <strong class="headerify">{{article.title}}</strong>
         </a>

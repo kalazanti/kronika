@@ -1,7 +1,7 @@
 <template>
-  <h1>Hello</h1>
-  <ArticleBox v-for="article in articles" :article="article" />
-  <h1>End</h1>
+  <main class="two columns">
+    <ArticleBox v-for="article in articles" :article="article" />
+  </main>
 </template>
 
 <script setup>
