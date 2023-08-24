@@ -13,7 +13,7 @@ export const useArticlesStore = defineStore('articles', () => {
   }
 
   function get(link) {
-    return articles.value.find(record => record.link === link) || {}
+    return articles.value.find(record => record.link === link) || null
   }
 
   const length = computed(() => articles.value.length)
