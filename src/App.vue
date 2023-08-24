@@ -1,15 +1,14 @@
 <template>
   <header>
-    <h1>This is the main App component</h1>
     <nav class="three columns" style="align-items: baseline">
       <RouterLink to="/" class="primary card">
         <strong>Krónika</strong>
       </RouterLink>
-      <RouterLink to="/rovatok" class="primary card">
+      <div to="/rovatok" class="gray card" title="Hamarosan..." style="cursor:not-allowed">
         <strong>Rovatok</strong>
-      </RouterLink>
+      </div>
       <a href="https://kalazanti.github.com" class="accent card">
-        <strong>Aktuális</strong>
+        <strong>Csapathonlap</strong>
       </a>
     </nav>
   </header>
@@ -21,7 +20,6 @@
 import { RouterLink, RouterView } from "vue-router";
 import { useArticlesStore } from "@/stores/articles.js";
 
-// import HelloWorld from "./components/HelloWorld.vue";
 import PocketBase from "pocketbase";
 
 const pb = new PocketBase("https://kalazanti.fly.dev");
@@ -36,5 +34,5 @@ pb.collection("kronika")
     articlesStore.add(record)
     console.log(record)
     console.log(articlesStore.length)
-    }));
+  }));
 </script>
