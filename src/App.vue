@@ -7,7 +7,7 @@
       <div to="/rovatok" class="gray card" title="Hamarosan..." style="cursor:not-allowed">
         <strong>Rovatok</strong>
       </div>
-      <a href="https://kalazanti.github.com" class="accent card">
+      <a href="https://kalazanti.github.io" class="accent card">
         <strong>Csapathonlap</strong>
       </a>
     </nav>
