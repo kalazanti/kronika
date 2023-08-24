@@ -1,8 +1,8 @@
 <template>
     <article class="lightgray card">
-        <a href="cikkek/#!/${link}">
-            <strong class="headerify">{{article.title}}</strong>
-        </a>
+        <RouterLink :to="'cikkek/' + article.link">
+            <strong class="headerify">{{ article.title }}</strong>
+        </RouterLink>
         <p>
             Írta: <strong>{{ article.author }}</strong>,
             <time datetime="{{ article.created }}">{{formatDateTime(article.created)}}</time></p>
