@@ -1,7 +1,6 @@
 <template>
   <header>
     <h1>This is the main App component</h1>
-    <button @click="pushToArticles">Add dummy article</button>
       <nav class="three columns" style="align-items: baseline">
         <RouterLink to="/" class="primary card">
           <strong>Krónika</strong>
@@ -32,10 +31,4 @@ pb.collection('kronika').getFullList({
   sort: '-created',
   filter: "published = true",
 }).then(records => articles.list = records)
-
-function pushToArticles(e) {
-  console.log(e)
-  console.log("poop")
-  articles.list.push({ title: 'kaki' })
-}
 </script>
