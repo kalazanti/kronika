@@ -9,7 +9,6 @@ export const useArticlesStore = defineStore('articles', () => {
     console.log(`index of ${article.link} is ${index}`)
     if(index === -1) {
       articles.value.push(article)
-      return
     }
   }
 
