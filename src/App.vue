@@ -13,7 +13,7 @@
       <div class="card" v-if="isAuthenticated">
         Jó munkát, {{ authData.username }}
       </div>
-      <RouterLink to="/" class="accent card" style="cursor:not-allowed" v-if="isAuthenticated">
+      <RouterLink to="/edit" class="accent card" v-if="isAuthenticated">
         <strong>Szerkesztő</strong>
       </RouterLink>
       <a href="#" class="gray card" v-if="isAuthenticated" @click="logout">
