@@ -6,7 +6,6 @@ export const useArticlesStore = defineStore('articles', () => {
 
   function add(article){
     const index = articles.value.findIndex(record => record.link === article.link)
-    console.log(`index of ${article.link} is ${index}`)
     if(index === -1) {
       articles.value.push(article)
     }
