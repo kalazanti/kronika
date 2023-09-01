@@ -10,6 +10,15 @@
       <a href="https://kalazanti.github.io" class="accent card">
         <strong>Csapathonlap</strong>
       </a>
+      <div class="card" v-if="isAuthenticated">
+        Jó munkát, {{ authData.username }}
+      </div>
+      <RouterLink to="/" class="accent card" style="cursor:not-allowed" v-if="isAuthenticated">
+        <strong>Szerkesztő</strong>
+      </RouterLink>
+      <a href="#" class="gray card" v-if="isAuthenticated" @click="logout">
+        <strong>Kilépés</strong>
+      </a>
     </nav>
   </header>
 
@@ -18,4 +27,12 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import { useAuthStore } from "./stores/auth";
+import { storeToRefs } from "pinia";
+
+const authStore = useAuthStore()
+function logout() {
+  authStore.logout();
+}
+const { isAuthenticated, authData } = storeToRefs(authStore)
 </script>
